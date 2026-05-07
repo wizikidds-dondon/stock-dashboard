@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台股監控儀表板</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ─── Header ─────────────────────────────── -->
+<header class="app-header">
+  <div class="logo">
+    <span>📈</span>
+    台股監控儀表板
+  </div>
+  <div class="header-right">
+    <span class="last-updated" id="last-updated-text"></span>
+    <button class="refresh-btn" id="btn-refresh-all">
+      <span class="icon-refresh">↻</span> 更新資料
+    </button>
+  </div>
+</header>
+
+<!-- ─── Tab Nav ─────────────────────────────── -->
+<nav class="tab-nav">
+  <button class="tab-btn active" data-tab="watchlist">👁 個股監控</button>
+  <button class="tab-btn" data-tab="sectors">🏢 類股監控</button>
+  <button class="tab-btn" data-tab="screener">🔍 技術篩選</button>
+  <button class="tab-btn" data-tab="flow">💰 資金流向</button>
+  <button class="tab-btn" data-tab="settings">⚙️ 設定</button>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     Tab 1: 個股監控
+════════════════════════════════════════════ -->
+<div id="tab-watchlist" class="tab-panel active">
+  <div class="content">
+    <div class="section-header">
+      <h2>觀察名單</h2>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-primary" id="btn-add-stock">＋ 新增股票</button>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="watchlist-loading" class="loading-state" style="display:none">
+      <div class="spinner"></div>
+      <p>載入中…</p>
+    </div>
+
+    <!-- Empty -->
+    <div id="watchlist-empty" class="empty-state" style="display:none">
+      <div class="empty-icon">📋</div>
+      <p>觀察名單為空</p>
+      <p style="margin-top:8px;font-size:13px">點擊「新增股票」加入想追蹤的股票</p>
+      <button class="btn btn-primary" style="margin-top:16px" onclick="openAddModal()">＋ 新增股票</button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper" id="watchlist-table" style="display:none">
+      <table>
+        <thead>
+          <tr>
+            <th>股票</th>
+            <th class="sortable" data-col="close">現價</th>
+            <th class="sortable" data-col="change_pct">漲跌幅</th>
+            <th class="sortable" data-col="volume">成交量</th>
+            <th class="sortable" data-col="vol_ratio_5d">量比</th>
+            <th>均線位置</th>
+            <th>技術訊號</th>
+            <th>類股</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="watchlist-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- MA 說明 -->
+    <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--muted)">
+      <span>均線說明：</span>
+      <span class="ma-badge ma-above">5↑</span><span>高於5日線</span>
+      <span class="ma-badge ma-below">20↓</span><span>低於月線</span>
+      <span class="signal-tag tag-golden" style="font-size:11px">黃金交叉5/20</span><span>MA5穿越MA20向上</span>
+      <span class="signal-tag tag-bullish" style="font-size:11px">多頭排列</span><span>價格>MA5>MA20>MA60</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Tab 2: 類股監控
+════════════════════════════════════════════ -->
+<div id="tab-sectors" class="tab-panel">
+  <div class="content">
+    <div class="section-header">
+      <h2>類股概覽</h2>
+      <button class="btn btn-outline" id="btn-refresh-sectors">↻ 刷新</button>
+    </div>
+
+    <div class="sectors-grid" id="sectors-grid">
+      <div class="loading-state"><div class="spinner"></div><p>載入中…</p></div>
+    </div>
+
+    <!-- 類股個股面板 -->
+    <div class="sector-stocks-panel" id="sector-stocks-panel" style="display:none;margin-top:20px">
+      <div class="sector-panel-header">
+        <div class="sector-panel-title" id="sector-panel-title">─</div>
+        <button class="btn btn-sm btn-outline" id="btn-close-sector-panel">✕ 關閉</button>
+      </div>
+      <div class="table-wrapper" style="border:none;border-radius:0">
+        <table>
+          <thead>
+            <tr>
+              <th>股票</th>
+              <th>現價</th>
+              <th>漲跌幅</th>
+              <th>均線位置</th>
+              <th>訊號</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="sector-stocks-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Tab 3: 技術篩選
+════════════════════════════════════════════ -->
+<div id="tab-screener" class="tab-panel">
+  <div class="content">
+    <div class="section-header">
+      <h2>技術指標篩選</h2>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-outline" id="btn-refresh-inst">更新法人資料</button>
+        <button class="btn btn-outline" id="btn-reset-screener">重設篩選</button>
+      </div>
+    </div>
+
+    <!-- 篩選條件 -->
+    <div class="screener-filters">
+      <!-- 均線位置 -->
+      <div class="filter-group">
+        <div class="filter-label">均線位置</div>
+        <div class="filter-chips" id="chips-ma-position">
+          <button class="chip" data-value="above_ma5">站上5日線</button>
+          <button class="chip" data-value="above_ma20">站上月線(20)</button>
+          <button class="chip" data-value="above_ma60">站上季線(60)</button>
+          <button class="chip" data-value="below_ma20">跌破月線</button>
+          <button class="chip" data-value="below_ma60">跌破季線</button>
+        </div>
+      </div>
+
+      <!-- 交叉訊號 -->
+      <div class="filter-group">
+        <div class="filter-label">交叉訊號</div>
+        <div class="filter-chips" id="chips-cross">
+          <button class="chip chip-golden" data-value="golden_520">5/20 黃金交叉</button>
+          <button class="chip chip-death"  data-value="death_520">5/20 死亡交叉</button>
+          <button class="chip chip-golden" data-value="golden_2060">20/60 黃金交叉</button>
+          <button class="chip chip-death"  data-value="death_2060">20/60 死亡交叉</button>
+        </div>
+      </div>
+
+      <!-- 量能 -->
+      <div class="filter-group">
+        <div class="filter-label">量能</div>
+        <div class="filter-chips" id="chips-volume">
+          <button class="chip" data-value="1">放量 ≥1.5x</button>
+          <button class="chip" data-value="2">爆量 ≥2.0x</button>
+        </div>
+      </div>
+
+      <!-- 排列型態 -->
+      <div class="filter-group">
+        <div class="filter-label">排列型態</div>
+        <div class="filter-chips" id="chips-alignment">
+          <button class="chip chip-bullish" data-value="bullish">多頭排列</button>
+          <button class="chip chip-bearish" data-value="bearish">空頭排列</button>
+        </div>
+      </div>
+
+      <!-- 回到上升月線 -->
+      <div class="filter-group">
+        <div class="filter-label">月線型態</div>
+        <div class="filter-chips" id="chips-ma-return">
+          <button class="chip chip-bullish" data-value="rising_ma20">回到上升月線</button>
+        </div>
+      </div>
+
+      <!-- 60分K MA60 -->
+      <div class="filter-group">
+        <div class="filter-label">60分K 均線</div>
+        <div class="filter-chips" id="chips-ma60-60m">
+          <button class="chip" data-value="above">站上60分K MA60</button>
+          <button class="chip" data-value="below">跌破60分K MA60</button>
+        </div>
+      </div>
+
+      <!-- 三大法人連續買超 -->
+      <div class="filter-group">
+        <div class="filter-label">三大法人連續買超3日</div>
+        <div class="filter-chips" id="chips-institutional">
+          <button class="chip chip-golden" data-value="foreign">外資連買3日</button>
+          <button class="chip chip-golden" data-value="trust">投信連買3日</button>
+          <button class="chip chip-golden" data-value="dealer">自營商連買3日</button>
+          <button class="chip chip-golden" data-value="total">三大合計連買3日</button>
+        </div>
+      </div>
+
+      <!-- 類股過濾 -->
+      <div class="filter-group">
+        <div class="filter-label">類股</div>
+        <select class="form-select" id="screener-sector-select" style="width:160px"></select>
+      </div>
+    </div>
+
+    <div class="screener-results-count" id="screener-count"></div>
+
+    <!-- 篩選結果 -->
+    <div id="screener-empty" class="empty-state" style="display:none">
+      <div class="empty-icon">🔍</div>
+      <p>沒有符合條件的股票</p>
+    </div>
+
+    <div class="table-wrapper" id="screener-table">
+      <table>
+        <thead>
+          <tr>
+            <th>股票</th>
+            <th>現價</th>
+            <th>漲跌幅</th>
+            <th>均線位置</th>
+            <th>技術訊號</th>
+            <th>類股</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="screener-tbody">
+          <tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">
+            <div class="spinner" style="margin:0 auto 12px"></div>載入中…
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Tab 4: 資金流向
+════════════════════════════════════════════ -->
+<div id="tab-flow" class="tab-panel">
+  <div class="content">
+
+    <!-- 控制列 -->
+    <div class="section-header">
+      <h2>台股資金流向</h2>
+      <div class="flow-controls">
+        <div class="flow-chips" id="flow-days-chips">
+          <button class="chip active" data-days="1">1日</button>
+          <button class="chip" data-days="3">3日</button>
+          <button class="chip" data-days="5">5日</button>
+          <button class="chip" data-days="10">10日</button>
+        </div>
+        <div class="flow-chips" id="flow-inst-chips">
+          <button class="chip active" data-inst="total">合計</button>
+          <button class="chip chip-golden" data-inst="foreign">外資</button>
+          <button class="chip" data-inst="trust">投信</button>
+          <button class="chip" data-inst="dealer">自營商</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- A: 類股資金流向 Bar -->
+    <div id="flow-sectors-container">
+      <div class="loading-state"><div class="spinner"></div><p>載入中…</p></div>
+    </div>
+
+    <div class="flow-legend" style="margin-top:10px;margin-bottom:32px">
+      <span><span class="flow-legend-dot" style="background:var(--down)"></span>買超（資金流入）</span>
+      <span><span class="flow-legend-dot" style="background:var(--up)"></span>賣超（資金流出）</span>
+      <span style="color:var(--muted);font-size:11px">單位：張（1張=1000股）</span>
+    </div>
+
+    <!-- B: 個股資金排行 -->
+    <div class="section-header">
+      <h2>個股資金排行 Top 20</h2>
+    </div>
+
+    <div class="flow-rank-grid">
+      <div>
+        <div class="flow-rank-title flow-buy-title">▲ 買超排行</div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>股票</th>
+                <th>類股</th>
+                <th>買超</th>
+                <th>估計金額</th>
+              </tr>
+            </thead>
+            <tbody id="flow-buy-tbody">
+              <tr><td colspan="5" style="text-align:center;padding:24px;color:var(--muted)">載入中…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="flow-rank-title flow-sell-title">▼ 賣超排行</div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>股票</th>
+                <th>類股</th>
+                <th>賣超</th>
+                <th>估計金額</th>
+              </tr>
+            </thead>
+            <tbody id="flow-sell-tbody">
+              <tr><td colspan="5" style="text-align:center;padding:24px;color:var(--muted)">載入中…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- C: 資金熱區矩陣 -->
+    <div class="section-header" style="margin-top:32px">
+      <h2>資金熱區矩陣
+        <span style="font-size:12px;color:var(--muted);font-weight:400">近5日 · 外資/投信/自營商</span>
+      </h2>
+    </div>
+
+    <div id="flow-matrix-container">
+      <div class="loading-state"><div class="spinner"></div><p>載入中…</p></div>
+    </div>
+
+    <div class="flow-legend" style="margin-top:10px">
+      <span><span class="flow-legend-dot" style="background:rgba(63,185,80,.6)"></span>買超（顏色越深＝金額越大）</span>
+      <span><span class="flow-legend-dot" style="background:rgba(248,81,73,.6)"></span>賣超</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Tab 5: 設定
+════════════════════════════════════════════ -->
+<div id="tab-settings" class="tab-panel">
+  <div class="content">
+    <div class="section-header">
+      <h2>設定</h2>
+    </div>
+
+    <div class="settings-grid">
+      <!-- Telegram 設定 -->
+      <div class="settings-card">
+        <h3>📱 Telegram 日報設定</h3>
+
+        <div class="form-group">
+          <label class="form-label">Bot Token</label>
+          <input type="password" class="form-input" id="tg-token-input"
+            placeholder="輸入 Bot Token（留空不更改）">
+          <div class="form-help">
+            前往 <a href="#">@BotFather</a> 建立 Bot 並取得 Token
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Chat ID</label>
+          <input type="text" class="form-input" id="tg-chat-id-input"
+            placeholder="例如: 123456789 或 @channel_name">
+          <div class="form-help">
+            個人 Chat ID 或頻道名稱（需先將 Bot 加入頻道）
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">日報發送時間</label>
+          <input type="time" class="form-input" id="tg-report-time" value="14:35"
+            style="width:120px">
+          <div class="form-help">台灣時間，每個交易日自動發送</div>
+        </div>
+
+        <div class="toggle-row">
+          <div>
+            <div class="toggle-label">啟用每日自動發送</div>
+            <div class="toggle-desc">每個交易日收盤後自動發送日報</div>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="tg-enabled-toggle" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" id="btn-save-settings">儲存設定</button>
+          <button class="btn btn-outline" id="btn-test-tg">傳送測試訊息</button>
+        </div>
+      </div>
+
+      <!-- 日報操作 -->
+      <div class="settings-card">
+        <h3>📊 日報操作</h3>
+
+        <div style="margin-bottom:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-primary" id="btn-send-report">立即發送日報</button>
+          <button class="btn btn-outline" id="btn-preview-report">預覽報告內容</button>
+        </div>
+
+        <!-- 報告預覽 -->
+        <div style="margin-bottom:20px">
+          <div class="form-label" style="margin-bottom:8px">報告預覽</div>
+          <pre id="report-preview-area" style="
+            background:var(--bg);
+            border:1px solid var(--border);
+            border-radius:var(--radius-sm);
+            padding:14px;
+            font-size:12px;
+            font-family:var(--font-mono);
+            white-space:pre-wrap;
+            word-break:break-word;
+            min-height:120px;
+            max-height:300px;
+            overflow-y:auto;
+            color:var(--muted);
+          ">點擊「預覽報告內容」查看…</pre>
+        </div>
+
+        <!-- 發送記錄 -->
+        <div>
+          <div class="form-label" style="margin-bottom:8px">最近發送記錄</div>
+          <ul class="report-log-list" id="report-log-list">
+            <li style="color:var(--muted);font-size:12px;padding:8px 0">載入中…</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 說明 -->
+    <div class="settings-card" style="margin-top:24px">
+      <h3>📖 使用說明</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:13px;line-height:1.8;color:var(--muted)">
+        <div>
+          <strong style="color:var(--text);display:block;margin-bottom:6px">如何取得 Telegram Bot Token</strong>
+          1. 在 Telegram 搜尋 @BotFather<br>
+          2. 輸入 /newbot，依指示建立 Bot<br>
+          3. 複製取得的 Token 貼入上方設定
+        </div>
+        <div>
+          <strong style="color:var(--text);display:block;margin-bottom:6px">如何取得 Chat ID</strong>
+          1. 將 Bot 加入目標群組或頻道<br>
+          2. 傳送任意訊息給 Bot<br>
+          3. 開啟瀏覽器：<code style="font-size:11px">api.telegram.org/bot[TOKEN]/getUpdates</code><br>
+          4. 在回應中找到 <code style="font-size:11px">chat.id</code>
+        </div>
+        <div>
+          <strong style="color:var(--text);display:block;margin-bottom:6px">均線說明</strong>
+          5日線（週線）/ 20日線（月線）/ 60日線（季線）<br>
+          120日線（半年線）/ 240日線（年線）
+        </div>
+        <div>
+          <strong style="color:var(--text);display:block;margin-bottom:6px">技術訊號說明</strong>
+          <span style="color:#d29922">黃金交叉</span>：短均線由下往上穿越長均線<br>
+          <span style="color:var(--muted)">死亡交叉</span>：短均線由上往下穿越長均線<br>
+          <span style="color:var(--down)">多頭排列</span>：價格 > MA5 > MA20 > MA60<br>
+          <span style="color:var(--up)">空頭排列</span>：價格 &lt; MA5 &lt; MA20 &lt; MA60
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     Modal: 新增股票
+════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-add-stock" onclick="if(event.target===this)closeAddModal()">
+  <div class="modal">
+    <h3>＋ 新增股票至觀察名單</h3>
+
+    <div class="form-group">
+      <label class="form-label">股票代碼 <span style="color:var(--up)">*</span></label>
+      <input type="text" class="form-input" id="add-symbol-input"
+        placeholder="例如: 2330（自動加上 .TW 後綴）"
+        onkeydown="if(event.key==='Enter')document.getElementById('add-name-input').focus()">
+      <div class="form-help">台灣上市股票輸入純數字，ETF 如 0050</div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">股票名稱（選填）</label>
+      <input type="text" class="form-input" id="add-name-input"
+        placeholder="例如: 台積電（可留空）"
+        onkeydown="if(event.key==='Enter')submitAddStock()">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">類股分類</label>
+      <select class="form-select" id="add-sector-select"></select>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeAddModal()">取消</button>
+      <button class="btn btn-primary" id="btn-add-confirm" onclick="submitAddStock()">加入</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Toast Container ─── -->
+<div id="toast-container"></div>
+
+<!-- ─── Scripts ─────────────────────────────── -->
+<script src="js/api.js"></script>
+<script src="js/watchlist.js"></script>
+<script src="js/sectors.js"></script>
+<script src="js/screener.js"></script>
+<script src="js/flow.js"></script>
+<script src="js/settings.js"></script>
+
+<script>
+/* ─── Toast 工具函式 ─── */
+function showToast(msg, type = 'info') {
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.textContent = msg;
+  container.appendChild(toast);
+  setTimeout(() => toast.remove(), 4000);
+}
+
+/* ─── Tab 切換 ─── */
+const tabModuleMap = {
+  sectors:  () => SectorsModule.load(),
+  flow:     () => FlowModule.load(),
+  settings: () => SettingsModule.load(),
+};
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + tab)?.classList.add('active');
+    tabModuleMap[tab]?.();
+  });
+});
+
+/* ─── 刷新所有資料 ─── */
+document.getElementById('btn-refresh-all')?.addEventListener('click', async () => {
+  const btn = document.getElementById('btn-refresh-all');
+  btn.classList.add('loading');
+  btn.disabled = true;
+  try {
+    const res = await API.refreshAll();
+    showToast(`開始更新 ${res.count} 支股票（背景執行中）`, 'info');
+    // 3秒後重新載入
+    setTimeout(() => {
+      WatchlistModule.load();
+      btn.classList.remove('loading');
+      btn.disabled = false;
+      document.getElementById('last-updated-text').textContent = '更新中…';
+    }, 3000);
+    // 15秒後再次載入確保資料完整
+    setTimeout(() => {
+      WatchlistModule.load();
+      const now = new Date().toLocaleTimeString('zh-TW', { hour:'2-digit', minute:'2-digit' });
+      document.getElementById('last-updated-text').textContent = `最後更新: ${now}`;
+    }, 15000);
+  } catch (e) {
+    showToast('刷新失敗: ' + e.message, 'error');
+    btn.classList.remove('loading');
+    btn.disabled = false;
+  }
+});
+
+/* ─── 填充類股下拉（Modal）─── */
+async function populateModalSectors() {
+  const sel = document.getElementById('add-sector-select');
+  try {
+    const catalog = await API.getSectorsCatalog();
+    sel.innerHTML = '<option value="">請選擇類股</option>' +
+      catalog.map(s => `<option value="${s.key}">${s.name}</option>`).join('');
+  } catch (e) {
+    sel.innerHTML = '<option value="">載入失敗</option>';
+  }
+}
+
+/* ─── 應用程式啟動 ─── */
+async function bootstrap() {
+  WatchlistModule.init();
+  SectorsModule.init();
+  ScreenerModule.init();
+  FlowModule.init();
+  SettingsModule.init();
+
+  // 載入觀察名單
+  await WatchlistModule.load();
+
+  // 填充 Modal 下拉選單
+  populateModalSectors();
+
+  // 顯示最後更新時間
+  const checkRefreshStatus = async () => {
+    try {
+      const status = await API.getRefreshStatus();
+      if (status.last_db_refresh) {
+        const t = status.last_db_refresh.refreshed_at?.slice(0, 16).replace('T', ' ') || '';
+        document.getElementById('last-updated-text').textContent = t ? `最後更新: ${t}` : '';
+      }
+    } catch (e) { /* ignore */ }
+  };
+  checkRefreshStatus();
+}
+
+bootstrap();
+</script>
+
+</body>
+</html>
