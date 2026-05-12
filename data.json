@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-05-12 21:06",
-  "updated_timestamp": 1778591194,
+  "updated_at": "2026-05-13 00:01",
+  "updated_timestamp": 1778601691,
   "stocks": [
     {
       "symbol": "2330.TW",
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
-      "close": 2255.0,
-      "change": 20.0,
-      "change_pct": 0.89,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 47560694,
-      "ma5": 2268.0,
-      "ma10": 2239.5,
-      "ma20": 2165.0,
-      "ma60": 1968.17,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 2345.0,
       "low_52w": 946.0,
       "market_cap": 58476659212288,
@@ -494,10 +494,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 2235.0,
-          "high": 2280.0,
-          "low": 2210.0,
-          "close": 2255.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 47560694
         }
       ]
@@ -505,14 +505,14 @@
     {
       "symbol": "2317.TW",
       "name": "Hon Hai Precision Industry Co., Ltd.",
-      "close": 250.0,
-      "change": -2.0,
-      "change_pct": -0.79,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 82864228,
-      "ma5": 251.5,
-      "ma10": 239.45,
-      "ma20": 226.82,
-      "ma60": 217.03,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 265.0,
       "low_52w": 151.0,
       "market_cap": 3490684600320,
@@ -994,10 +994,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 254.0,
-          "high": 254.0,
-          "low": 246.0,
-          "close": 250.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 82864228
         }
       ]
@@ -1005,14 +1005,14 @@
     {
       "symbol": "2454.TW",
       "name": "MediaTek Inc.",
-      "close": 3700.0,
-      "change": -180.0,
-      "change_pct": -4.64,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 10578113,
-      "ma5": 3612.0,
-      "ma10": 3188.5,
-      "ma20": 2629.25,
-      "ma60": 2009.67,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 3985.0,
       "low_52w": 1130.0,
       "market_cap": 5905575313408,
@@ -1494,10 +1494,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 3835.0,
-          "high": 3910.0,
-          "low": 3700.0,
-          "close": 3700.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 10578113
         }
       ]
@@ -1505,14 +1505,14 @@
     {
       "symbol": "2382.TW",
       "name": "Quanta Computer Inc.",
-      "close": 340.0,
-      "change": -3.5,
-      "change_pct": -1.02,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 12812135,
-      "ma5": 342.9,
-      "ma10": 330.9,
-      "ma20": 327.82,
-      "ma60": 301.82,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 352.5,
       "low_52w": 252.5,
       "market_cap": 1310536237056,
@@ -1994,10 +1994,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 346.5,
-          "high": 347.5,
-          "low": 338.0,
-          "close": 340.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 12812135
         }
       ]
@@ -2005,14 +2005,14 @@
     {
       "symbol": "2308.TW",
       "name": "Delta Electronics, Inc.",
-      "close": 2195.0,
-      "change": -50.0,
-      "change_pct": -2.23,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 12813150,
-      "ma5": 2226.0,
-      "ma10": 2197.0,
-      "ma20": 2059.75,
-      "ma60": 1618.58,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 2370.0,
       "low_52w": 361.0,
       "market_cap": 5701607882752,
@@ -2494,10 +2494,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 2225.0,
-          "high": 2260.0,
-          "low": 2190.0,
-          "close": 2195.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 12813150
         }
       ]
@@ -2505,14 +2505,14 @@
     {
       "symbol": "2303.TW",
       "name": "United Microelectronics Corporation",
-      "close": 104.5,
-      "change": 9.5,
-      "change_pct": 10.0,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 381508186,
-      "ma5": 95.74,
-      "ma10": 86.99,
-      "ma20": 79.27,
-      "ma60": 66.79,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 104.5,
       "low_52w": 40.1,
       "market_cap": 1313585102848,
@@ -2994,10 +2994,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 96.7,
-          "high": 104.5,
-          "low": 94.3,
-          "close": 104.5,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 381508186
         }
       ]
@@ -3005,14 +3005,14 @@
     {
       "symbol": "2881.TW",
       "name": "Fubon Financial Holding Co., Ltd.",
-      "close": 93.7,
-      "change": -1.8,
-      "change_pct": -1.88,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 35974566,
-      "ma5": 94.64,
-      "ma10": 92.63,
-      "ma20": 90.22,
-      "ma60": 90.07,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 98.8,
       "low_52w": 76.78049,
       "market_cap": 1280478150656,
@@ -3494,10 +3494,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 96.0,
-          "high": 96.0,
-          "low": 93.7,
-          "close": 93.7,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 35974566
         }
       ]
@@ -3505,14 +3505,14 @@
     {
       "symbol": "2882.TW",
       "name": "Cathay Financial Holding Co., Ltd.",
-      "close": 76.4,
-      "change": -2.0,
-      "change_pct": -2.55,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 44531732,
-      "ma5": 78.5,
-      "ma10": 77.64,
-      "ma20": 76.07,
-      "ma60": 74.52,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 81.6,
       "low_52w": 56.9,
       "market_cap": 1120727597056,
@@ -3994,10 +3994,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 78.7,
-          "high": 79.5,
-          "low": 76.4,
-          "close": 76.4,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 44531732
         }
       ]
@@ -4005,14 +4005,14 @@
     {
       "symbol": "2886.TW",
       "name": "Mega Financial Holding Co., Ltd.",
-      "close": 39.2,
-      "change": -0.9,
-      "change_pct": -2.24,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 23148388,
-      "ma5": 39.74,
-      "ma10": 39.61,
-      "ma20": 39.61,
-      "ma60": 39.47,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 43.2,
       "low_52w": 37.85,
       "market_cap": 583428407296,
@@ -4494,10 +4494,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 40.1,
-          "high": 40.1,
-          "low": 39.2,
-          "close": 39.2,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 23148388
         }
       ]
@@ -4505,14 +4505,14 @@
     {
       "symbol": "2891.TW",
       "name": "CTBC Financial Holding Co., Ltd.",
-      "close": 53.5,
-      "change": -1.8,
-      "change_pct": -3.25,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 88859850,
-      "ma5": 55.22,
-      "ma10": 54.12,
-      "ma20": 53.58,
-      "ma60": 52.95,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 57.0,
       "low_52w": 40.1,
       "market_cap": 1052763226112,
@@ -4994,10 +4994,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 54.9,
-          "high": 54.9,
-          "low": 53.5,
-          "close": 53.5,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 88859850
         }
       ]
@@ -5005,14 +5005,14 @@
     {
       "symbol": "3008.TW",
       "name": "Largan Precision Co., Ltd.",
-      "close": 2795.0,
-      "change": 250.0,
-      "change_pct": 9.82,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 3204560,
-      "ma5": 2601.0,
-      "ma10": 2581.5,
-      "ma20": 2614.5,
-      "ma60": 2396.17,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 2930.0,
       "low_52w": 2020.0,
       "market_cap": 365580976128,
@@ -5494,10 +5494,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 2600.0,
-          "high": 2795.0,
-          "low": 2580.0,
-          "close": 2795.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 3204560
         }
       ]
@@ -5505,14 +5505,14 @@
     {
       "symbol": "2412.TW",
       "name": "Chunghwa Telecom Co., Ltd.",
-      "close": 135.5,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 9659701,
-      "ma5": 135.8,
-      "ma10": 136.0,
-      "ma20": 136.18,
-      "ma60": 135.28,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 138.0,
       "low_52w": 128.0,
       "market_cap": 1051134001152,
@@ -5994,10 +5994,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 135.5,
-          "high": 136.5,
-          "low": 135.5,
-          "close": 135.5,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 9659701
         }
       ]
@@ -6005,14 +6005,14 @@
     {
       "symbol": "2002.TW",
       "name": "China Steel Corporation",
-      "close": 18.5,
-      "change": -0.1,
-      "change_pct": -0.54,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 46297002,
-      "ma5": 18.7,
-      "ma10": 18.72,
-      "ma20": 19.2,
-      "ma60": 19.61,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 21.65,
       "low_52w": 17.6,
       "market_cap": 282680098816,
@@ -6494,10 +6494,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 18.8,
-          "high": 18.8,
-          "low": 18.5,
-          "close": 18.5,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 46297002
         }
       ]
@@ -6505,14 +6505,14 @@
     {
       "symbol": "1301.TW",
       "name": "Formosa Plastics Corporation",
-      "close": 47.65,
-      "change": -1.6,
-      "change_pct": -3.25,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 25840609,
-      "ma5": 49.14,
-      "ma10": 50.14,
-      "ma20": 51.18,
-      "ma60": 48.66,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 56.3,
       "low_52w": 32.95,
       "market_cap": 303327576064,
@@ -6994,10 +6994,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 49.55,
-          "high": 49.55,
-          "low": 47.6,
-          "close": 47.65,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 25840609
         }
       ]
@@ -7005,14 +7005,14 @@
     {
       "symbol": "1303.TW",
       "name": "Nan Ya Plastics Corporation",
-      "close": 89.1,
-      "change": -2.4,
-      "change_pct": -2.62,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 63456235,
-      "ma5": 90.66,
-      "ma10": 90.64,
-      "ma20": 89.22,
-      "ma60": 83.52,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 101.5,
       "low_52w": 26.25,
       "market_cap": 706636218368,
@@ -7494,10 +7494,10 @@
         },
         {
           "date": "2026-05-12",
-          "open": 92.4,
-          "high": 92.9,
-          "low": 88.5,
-          "close": 89.1,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 63456235
         }
       ]
@@ -7701,8 +7701,8 @@
       "name": "中信數據及電力  ",
       "foreign_net": -3900,
       "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 0
+      "dealer_net": 10954454,
+      "total_net": 10950554
     },
     {
       "symbol": "1714",
@@ -27708,9 +27708,9 @@
       "symbol": "3030",
       "name": "德律            ",
       "foreign_net": 76015,
-      "trust_net": 0,
-      "dealer_net": 26567,
-      "total_net": 102582
+      "trust_net": 14000,
+      "dealer_net": 2000,
+      "total_net": 0
     },
     {
       "symbol": "4968",
@@ -135371,152 +135371,152 @@
   ],
   "sectors": {
     "半導體": {
-      "avg_change_pct": 0.93,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2330.TW",
-          "close": 2255.0,
-          "change_pct": 0.89
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2454.TW",
-          "close": 3700.0,
-          "change_pct": -4.64
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2303.TW",
-          "close": 104.5,
-          "change_pct": 10.0
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "3711.TW",
-          "close": 555.0,
-          "change_pct": 3.35
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2379.TW",
-          "close": 555.0,
-          "change_pct": -4.97
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "電子零組件": {
-      "avg_change_pct": -0.25,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2317.TW",
-          "close": 250.0,
-          "change_pct": -0.79
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2382.TW",
-          "close": 340.0,
-          "change_pct": -1.02
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2308.TW",
-          "close": 2195.0,
-          "change_pct": -2.23
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "3034.TW",
-          "close": 487.0,
-          "change_pct": -1.91
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2301.TW",
-          "close": 234.5,
-          "change_pct": 4.69
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "金融": {
-      "avg_change_pct": -2.29,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2881.TW",
-          "close": 93.7,
-          "change_pct": -1.88
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2882.TW",
-          "close": 76.4,
-          "change_pct": -2.55
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2886.TW",
-          "close": 39.2,
-          "change_pct": -2.24
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2891.TW",
-          "close": 53.5,
-          "change_pct": -3.25
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2884.TW",
-          "close": 31.8,
-          "change_pct": -1.55
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "傳產/鋼鐵": {
-      "avg_change_pct": -1.32,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2002.TW",
-          "close": 18.5,
-          "change_pct": -0.54
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2006.TW",
-          "close": 66.2,
-          "change_pct": -2.22
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "9910.TW",
-          "close": 73.5,
-          "change_pct": -1.21
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "石化": {
-      "avg_change_pct": -2.48,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "1301.TW",
-          "close": 47.65,
-          "change_pct": -3.25
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "1303.TW",
-          "close": 89.1,
-          "change_pct": -2.62
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "1326.TW",
-          "close": 47.05,
-          "change_pct": -1.57
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "電信": {
-      "avg_change_pct": -0.24,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2412.TW",
-          "close": 135.5,
-          "change_pct": 0.0
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "3045.TW",
-          "close": 110.0,
-          "change_pct": 0.0
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "4904.TW",
-          "close": 95.5,
-          "change_pct": -0.73
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     }

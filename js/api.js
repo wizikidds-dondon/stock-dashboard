@@ -112,5 +112,36 @@ const API = (() => {
         s.symbol.toLowerCase().includes(query) || (s.name && s.name.toLowerCase().includes(query))
       ).map(s => ({ symbol: s.symbol, name: s.name, price: s.close, change_pct: s.change_pct }));
     },
+    // 相容舊版 HTTP 方法（screener.js / flow.js 使用）
+    get: async (path) => {
+      const data = await loadData();
+      if (path.includes('institutional')) return { data: data.institutional || [] };
+      if (path.includes('watchlist')) return await API.getWatchlist();
+      if (path.includes('sectors/catalog')) return await API.getSectorsCatalog();
+      if (path.includes('sectors')) return await API.getSectors();
+      if (path.includes('refresh/status')) return await API.getRefreshStatus();
+      if (path.includes('settings')) return await API.getSettings();
+      return {};
+    },
+    post: async (path, body) => {
+      if (path.includes('watchlist') && body && body.symbol) return await API.addWatchlist(body);
+      if (path.includes('refresh')) return await API.refreshAll();
+      if (path.includes('telegram/test')) return await API.testTelegram();
+      if (path.includes('telegram/report')) return await API.sendReport();
+      if (path.includes('settings')) return await API.saveSettings(body);
+      return { success: true };
+    },
+    put: async (path, body) => {
+      if (path.includes('watchlist') && path.includes('note')) {
+        const sym = decodeURIComponent(path.split('/').slice(-2)[0]);
+        return await API.updateNote(sym, body?.note || '');
+      }
+      if (path.includes('settings')) return await API.saveSettings(body);
+      return { success: true };
+    },
+    delete: async (path) => {
+      const sym = decodeURIComponent(path.split('/').pop());
+      return await API.removeWatchlist(sym);
+    },
   };
 })();
