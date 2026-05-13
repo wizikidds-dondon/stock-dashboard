@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-05-13 22:43",
-  "updated_timestamp": 1778683427,
+  "updated_at": "2026-05-14 00:12",
+  "updated_timestamp": 1778688733,
   "stocks": [
     {
       "symbol": "2330.TW",
       "name": "台積電",
-      "close": 2220.0,
-      "change": -35.0,
-      "change_pct": -1.55,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 39686391,
-      "ma5": 2262.0,
-      "ma10": 2240.0,
-      "ma20": 2173.25,
-      "ma60": 1975.27,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 2345.0,
       "low_52w": 946.0,
       "market_cap": 57569036992512,
@@ -494,10 +494,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 2205.0,
-          "high": 2240.0,
-          "low": 2205.0,
-          "close": 2220.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 39686391
         }
       ]
@@ -505,14 +505,14 @@
     {
       "symbol": "2317.TW",
       "name": "鴻海",
-      "close": 251.0,
-      "change": 1.0,
-      "change_pct": 0.4,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 71931786,
-      "ma5": 251.3,
-      "ma10": 242.0,
-      "ma20": 229.0,
-      "ma60": 217.61,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 265.0,
       "low_52w": 151.0,
       "market_cap": 3504647438336,
@@ -994,10 +994,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 246.5,
-          "high": 251.0,
-          "low": 242.5,
-          "close": 251.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 71931786
         }
       ]
@@ -1005,14 +1005,14 @@
     {
       "symbol": "2454.TW",
       "name": "聯發科",
-      "close": 3495.0,
-      "change": -205.0,
-      "change_pct": -5.54,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 9650215,
-      "ma5": 3625.0,
-      "ma10": 3276.5,
-      "ma20": 2718.0,
-      "ma60": 2038.0,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 3985.0,
       "low_52w": 1130.0,
       "market_cap": 5578374512640,
@@ -1494,10 +1494,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 3625.0,
-          "high": 3680.0,
-          "low": 3400.0,
-          "close": 3495.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 9650215
         }
       ]
@@ -1505,14 +1505,14 @@
     {
       "symbol": "2382.TW",
       "name": "廣達",
-      "close": 340.5,
-      "change": 0.5,
-      "change_pct": 0.15,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 13142685,
-      "ma5": 341.7,
-      "ma10": 332.85,
-      "ma20": 328.7,
-      "ma60": 302.88,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 352.5,
       "low_52w": 252.5,
       "market_cap": 1312463519744,
@@ -1994,10 +1994,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 339.5,
-          "high": 343.0,
-          "low": 335.5,
-          "close": 340.5,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 13142685
         }
       ]
@@ -2005,14 +2005,14 @@
     {
       "symbol": "2308.TW",
       "name": "台達電子",
-      "close": 2165.0,
-      "change": -30.0,
-      "change_pct": -1.37,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 7623250,
-      "ma5": 2217.0,
-      "ma10": 2201.0,
-      "ma20": 2080.5,
-      "ma60": 1634.42,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 2370.0,
       "low_52w": 361.0,
       "market_cap": 5623681384448,
@@ -2494,10 +2494,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 2160.0,
-          "high": 2185.0,
-          "low": 2140.0,
-          "close": 2165.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 7623250
         }
       ]
@@ -2505,14 +2505,14 @@
     {
       "symbol": "2303.TW",
       "name": "聯電",
-      "close": 98.4,
-      "change": -6.1,
-      "change_pct": -5.84,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 352554571,
-      "ma5": 97.14,
-      "ma10": 89.32,
-      "ma20": 81.21,
-      "ma60": 67.41,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 104.5,
       "low_52w": 40.1,
       "market_cap": 1236907065344,
@@ -2994,10 +2994,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 102.0,
-          "high": 102.0,
-          "low": 94.5,
-          "close": 98.4,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 352554571
         }
       ]
@@ -3005,14 +3005,14 @@
     {
       "symbol": "2881.TW",
       "name": "富邦金",
-      "close": 94.7,
-      "change": 1.0,
-      "change_pct": 1.07,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 18395871,
-      "ma5": 95.02,
-      "ma10": 93.24,
-      "ma20": 90.58,
-      "ma60": 90.12,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 98.8,
       "low_52w": 77.268295,
       "market_cap": 1294143848448,
@@ -3494,10 +3494,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 93.5,
-          "high": 95.2,
-          "low": 93.3,
-          "close": 94.7,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 18395871
         }
       ]
@@ -3505,14 +3505,14 @@
     {
       "symbol": "2882.TW",
       "name": "國泰金",
-      "close": 77.3,
-      "change": 0.9,
-      "change_pct": 1.18,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 34423474,
-      "ma5": 78.22,
-      "ma10": 77.9,
-      "ma20": 76.3,
-      "ma60": 74.56,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 81.6,
       "low_52w": 58.4,
       "market_cap": 1133929955328,
@@ -3994,10 +3994,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 76.6,
-          "high": 78.3,
-          "low": 76.1,
-          "close": 77.3,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 34423474
         }
       ]
@@ -4005,14 +4005,14 @@
     {
       "symbol": "2886.TW",
       "name": "兆豐金",
-      "close": 39.55,
-      "change": 0.35,
-      "change_pct": 0.89,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 18300068,
-      "ma5": 39.74,
-      "ma10": 39.55,
-      "ma20": 39.62,
-      "ma60": 39.48,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 43.2,
       "low_52w": 37.85,
       "market_cap": 588637601792,
@@ -4494,10 +4494,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 39.35,
-          "high": 39.8,
-          "low": 39.1,
-          "close": 39.55,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 18300068
         }
       ]
@@ -4505,14 +4505,14 @@
     {
       "symbol": "2891.TW",
       "name": "中信金",
-      "close": 54.9,
-      "change": 1.4,
-      "change_pct": 2.62,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 56675069,
-      "ma5": 55.26,
-      "ma10": 54.28,
-      "ma20": 53.67,
-      "ma60": 53.01,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 57.0,
       "low_52w": 40.25,
       "market_cap": 1080312201216,
@@ -4994,10 +4994,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 53.5,
-          "high": 55.3,
-          "low": 53.5,
-          "close": 54.9,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 56675069
         }
       ]
@@ -5005,14 +5005,14 @@
     {
       "symbol": "3008.TW",
       "name": "大立光",
-      "close": 2850.0,
-      "change": 55.0,
-      "change_pct": 1.97,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 4359860,
-      "ma5": 2667.0,
-      "ma10": 2608.5,
-      "ma20": 2623.5,
-      "ma60": 2405.34,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 2930.0,
       "low_52w": 2020.0,
       "market_cap": 372774862848,
@@ -5494,10 +5494,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 2870.0,
-          "high": 2870.0,
-          "low": 2735.0,
-          "close": 2850.0,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 4359860
         }
       ]
@@ -5505,14 +5505,14 @@
     {
       "symbol": "2412.TW",
       "name": "中華電",
-      "close": 137.5,
-      "change": 2.0,
-      "change_pct": 1.48,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 14246508,
-      "ma5": 136.1,
-      "ma10": 136.05,
-      "ma20": 136.3,
-      "ma60": 135.35,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 138.0,
       "low_52w": 128.0,
       "market_cap": 1066648928256,
@@ -5994,10 +5994,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 136.5,
-          "high": 137.5,
-          "low": 135.5,
-          "close": 137.5,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 14246508
         }
       ]
@@ -6005,14 +6005,14 @@
     {
       "symbol": "2002.TW",
       "name": "中龋鲸",
-      "close": 18.4,
-      "change": -0.1,
-      "change_pct": -0.54,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 41618420,
-      "ma5": 18.62,
-      "ma10": 18.69,
-      "ma20": 19.09,
-      "ma60": 19.57,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 21.65,
       "low_52w": 17.6,
       "market_cap": 281152094208,
@@ -6494,10 +6494,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 18.5,
-          "high": 18.55,
-          "low": 18.3,
-          "close": 18.4,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 41618420
         }
       ]
@@ -6505,14 +6505,14 @@
     {
       "symbol": "1301.TW",
       "name": "台塑一",
-      "close": 46.9,
-      "change": -0.75,
-      "change_pct": -1.57,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 15743657,
-      "ma5": 48.38,
-      "ma10": 49.72,
-      "ma20": 50.81,
-      "ma60": 48.69,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 56.3,
       "low_52w": 32.95,
       "market_cap": 298553278464,
@@ -6994,10 +6994,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 47.65,
-          "high": 47.7,
-          "low": 46.85,
-          "close": 46.9,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 15743657
         }
       ]
@@ -7005,14 +7005,14 @@
     {
       "symbol": "1303.TW",
       "name": "南亞塑衫",
-      "close": 86.5,
-      "change": -2.6,
-      "change_pct": -2.92,
+      "close": NaN,
+      "change": NaN,
+      "change_pct": NaN,
       "volume": 56570750,
-      "ma5": 89.2,
-      "ma10": 90.34,
-      "ma20": 89.1,
-      "ma60": 83.75,
+      "ma5": NaN,
+      "ma10": NaN,
+      "ma20": NaN,
+      "ma60": NaN,
       "high_52w": 101.5,
       "low_52w": 26.25,
       "market_cap": 686016102400,
@@ -7494,10 +7494,10 @@
         },
         {
           "date": "2026-05-13",
-          "open": 89.7,
-          "high": 89.7,
-          "low": 85.2,
-          "close": 86.5,
+          "open": NaN,
+          "high": NaN,
+          "low": NaN,
+          "close": NaN,
           "volume": 56570750
         }
       ]
@@ -127555,176 +127555,176 @@
   ],
   "sectors": {
     "半導體": {
-      "avg_change_pct": -2.95,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2330.TW",
           "name": "台積電",
-          "close": 2220.0,
-          "change_pct": -1.55
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2454.TW",
           "name": "聯發科",
-          "close": 3495.0,
-          "change_pct": -5.54
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2303.TW",
           "name": "聯電",
-          "close": 98.4,
-          "change_pct": -5.84
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "3711.TW",
           "name": "日月光",
-          "close": 548.0,
-          "change_pct": -1.26
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2379.TW",
           "name": "瑞昕",
-          "close": 552.0,
-          "change_pct": -0.54
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "電子零組件": {
-      "avg_change_pct": -2.15,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2317.TW",
           "name": "鴻海",
-          "close": 251.0,
-          "change_pct": 0.4
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2382.TW",
           "name": "廣達",
-          "close": 340.5,
-          "change_pct": 0.15
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2308.TW",
           "name": "台達電子",
-          "close": 2165.0,
-          "change_pct": -1.37
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "3034.TW",
           "name": "桑世安",
-          "close": 486.5,
-          "change_pct": -0.1
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2301.TW",
           "name": "光美",
-          "close": 211.5,
-          "change_pct": -9.81
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "金融": {
-      "avg_change_pct": 1.21,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2881.TW",
           "name": "富邦金",
-          "close": 94.7,
-          "change_pct": 1.07
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2882.TW",
           "name": "國泰金",
-          "close": 77.3,
-          "change_pct": 1.18
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2886.TW",
           "name": "兆豐金",
-          "close": 39.55,
-          "change_pct": 0.89
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2891.TW",
           "name": "中信金",
-          "close": 54.9,
-          "change_pct": 2.62
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2884.TW",
           "name": "玉山金",
-          "close": 31.9,
-          "change_pct": 0.31
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "傳產/鋼鐵": {
-      "avg_change_pct": -1.4,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2002.TW",
           "name": "中龋鲸",
-          "close": 18.4,
-          "change_pct": -0.54
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "2006.TW",
           "name": "東和這",
-          "close": 65.5,
-          "change_pct": -1.06
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "9910.TW",
           "name": "永豊",
-          "close": 71.6,
-          "change_pct": -2.59
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "石化": {
-      "avg_change_pct": -2.17,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "1301.TW",
           "name": "台塑一",
-          "close": 46.9,
-          "change_pct": -1.57
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "1303.TW",
           "name": "南亞塑衫",
-          "close": 86.5,
-          "change_pct": -2.92
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "1326.TW",
           "name": "台化",
-          "close": 46.1,
-          "change_pct": -2.02
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     },
     "電信": {
-      "avg_change_pct": 1.59,
+      "avg_change_pct": NaN,
       "stocks": [
         {
           "symbol": "2412.TW",
           "name": "中華電",
-          "close": 137.5,
-          "change_pct": 1.48
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "3045.TW",
           "name": "台灣大哥大",
-          "close": 112.0,
-          "change_pct": 1.82
+          "close": NaN,
+          "change_pct": NaN
         },
         {
           "symbol": "4904.TW",
           "name": "遠傳",
-          "close": 96.9,
-          "change_pct": 1.47
+          "close": NaN,
+          "change_pct": NaN
         }
       ]
     }
