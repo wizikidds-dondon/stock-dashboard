@@ -1,8 +1,8 @@
 """
 台股監控儀表板 - 靜態資料產生器
-修正：1.股票名稱改用中文 2.三大法人自動機制
+修正：1.內建中文名稱對照表 2.三大法人自動機制
 """
-import json, os, shutil, logging, requests, re
+import json, os, shutil, logging, requests
 from datetime import datetime, date, timedelta
 from pathlib import Path
 import yfinance as yf
@@ -17,28 +17,19 @@ DEFAULT_STOCKS = [
     "2303.TW","2881.TW","2882.TW","2886.TW","2891.TW",
     "3008.TW","2412.TW","2002.TW","1301.TW","1303.TW",
 ]
-_TW_NAMES = {}
 
-def fetch_tw_names():
-    global _TW_NAMES
-    try:
-        url = "https://isin.twse.com.tw/isin/C_public.jsp?strMode=2"
-        resp = requests.get(url, timeout=15, headers={"User-Agent":"Mozilla/5.0"})
-        resp.encoding = "big5"
-        for line in resp.text.split("\n"):
-            if "<td>" in line:
-                cells = re.findall(r"<td[^>]*>(.*?)</td>", line)
-                if len(cells) >= 2:
-                    code_name = cells[0].strip()
-                    if "\u3000" in code_name:
-                        parts = code_name.split("\u3000")
-                        code = parts[0].strip()
-                        name = parts[1].strip() if len(parts) > 1 else ""
-                        if code and name and len(code) <= 6:
-                            _TW_NAMES[code] = name
-        logger.info(f"✓ 中文名稱 {len(_TW_NAMES)} 筆")
-    except Exception as e:
-        logger.warning(f"中文名稱失敗: {e}")
+# 內建中文名稱對照表（不依賴外部網路）
+TW_NAMES = {
+    "2330":"台積電","2317":"鴻海","2454":"聯發科","2382":"廣達","2308":"台達電子",
+    "2303":"聯電","2881":"富邦金","2882":"國泰金","2886":"兆豐金","2891":"中信金",
+    "3008":"大立光","2412":"中華電","2002":"中龋鲸","1301":"台塑一","1303":"南亞塑衫",
+    "2884":"玉山金","2885":"元大金","2892":"第一金","5880":"合庫金","2801":"彰銀",
+    "2379":"瑞昕","3711":"日月光","2301":"光美","3034":"桑世安","6505":"台塔山",
+    "2912":"统一超",  "9904":"寶成",  "1326":"台化","2006":"東和這","9910":"永豊",
+    "3045":"台灣大哥大","4904":"遠傳","2345":"儲光",  "2408":"澨华",  "3231":"緯兆",
+    "2357":"華碩","2382":"廣達","6669":"熙副","3017":"篏廉","2395":"研華",
+    "2376":"技嘉","2337":"泙邽","6415":"矽蚝科","3008":"大立光","2448":"晶緑連",
+}
 
 def get_stock_list():
     env = os.environ.get("STOCK_LIST","")
@@ -46,7 +37,7 @@ def get_stock_list():
 
 def get_tw_name(symbol, fallback=""):
     code = symbol.replace(".TW","").replace(".TWO","")
-    return _TW_NAMES.get(code, fallback)
+    return TW_NAMES.get(code, fallback)
 
 def fetch_stock_data(symbols):
     logger.info(f"抓取 {len(symbols)} 檔股票...")
@@ -105,8 +96,9 @@ def fetch_institutional():
             result = []
             for r in rows:
                 rec = dict(zip(fields,r))
-                result.append({"symbol":rec.get("證券代號",""),
-                    "name":rec.get("證券名稱",""),
+                sym = rec.get("證券代號","")
+                result.append({"symbol":sym,
+                    "name":TW_NAMES.get(sym, rec.get("證券名稱","")),
                     "foreign_net":pn(rec.get("外陸資買賣超股數(不含外資自營商)",0)),
                     "trust_net":pn(rec.get("投信買賣超股數",0)),
                     "dealer_net":pn(rec.get("自營商買賣超股數",0)),
@@ -145,7 +137,6 @@ def fetch_sectors():
 def main():
     now_tw = datetime.now(TW)
     logger.info(f"=== 開始 {now_tw.strftime('%Y-%m-%d %H:%M')} ===")
-    fetch_tw_names()
     stocks = fetch_stock_data(get_stock_list())
     institutional = fetch_institutional()
     sectors = fetch_sectors()
